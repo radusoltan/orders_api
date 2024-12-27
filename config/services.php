@@ -34,5 +34,8 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'external_api' => [
+        'external_api_url' => env('EXTERNEL_API_URL')
+    ]
 
 ];
