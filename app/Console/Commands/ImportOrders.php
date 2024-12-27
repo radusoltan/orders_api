@@ -29,7 +29,7 @@ class ImportOrders extends Command
     public function handle()
     {
         $this->info('Importing orders from external API...');
-        $response = Http::get('http://localhost:8000/api/orders');
+        $response = Http::get(config('services.external_api.external_api_url')."api/orders");
         $orders = json_decode($response->body())->data;
         foreach ($orders as $item) {
             $order = Order::where('order_number', $item->order_number)->first();
